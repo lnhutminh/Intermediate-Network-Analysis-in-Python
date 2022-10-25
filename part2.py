@@ -29,30 +29,30 @@ clubsG = nx.bipartite.projected_graph(G, clubs)
 
 ##################
 
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
 
 # Plot the degree centrality distribution of both node partitions from the original graph
-plt.figure()
-original_dc = ____
-# Remember that you can directly plot dictionary values.
-plt.hist(____, alpha=0.5)
+plt.figure() 
+original_dc = nx.bipartite.degree_centrality(G, people)  
+# Remember that you can cast a dictionary values to a list.
+plt.hist(original_dc.values(), alpha=0.5)
 plt.yscale('log')
 plt.title('Bipartite degree centrality')
 plt.show()
 
 
 # Plot the degree centrality distribution of the peopleG graph
-plt.figure()  
-people_dc = ____
-plt.hist(____)
+plt.figure()
+people_dc = nx.degree_centrality(peopleG)
+plt.hist(people_dc.values())
 plt.yscale('log')
 plt.title('Degree centrality of people partition')
 plt.show()
 
 # Plot the degree centrality distribution of the clubsG graph
-plt.figure() 
-clubs_dc = ____
-plt.hist(____)
+plt.figure()
+clubs_dc = nx.degree_centrality(clubsG)
+plt.hist(clubs_dc.values())
 plt.yscale('log')
 plt.title('Degree centrality of clubs partition')
 plt.show()
